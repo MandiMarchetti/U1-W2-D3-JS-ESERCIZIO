@@ -140,19 +140,11 @@ const femaleCharacters = [];
 for (let i = 0; i < starWarsCharacters.length; i++) {
   const genders = starWarsCharacters[i].gender;
 
-  if(starWarsCharacters[i].gender === 'female'){
-  genders.wild = true;
-}else{
-  genders.wild = null;
+  if(genders === 'female'){
+    femaleCharacters.push(genders);
 }
-
-  femaleCharacters.push(genders)
 }
   console.log(femaleCharacters);
-
-
-
-
 
 
 
@@ -161,8 +153,34 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
 
+const eyeColor = [
+   {color:"blue"},
+   {color:"yellow"},
+   {color:"brown"},
+   {color:"red"},
+   {color:"blue-gray"}
+  ]
+
+
+let arrayVuoto = [];
+
+for (let i = 0; i < eyeColor.length; i++) {
+  const colors = eyeColor[i].color;
+
+if (eyeColor[i].color === "blue") {
+  colors.wild = true;
+} else {
+  colors.wild = false;
+}
+
+arrayVuoto.push(colors);
+}
+console.log(arrayVuoto);
+
+
 /* ESERCIZIO 5
-  Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
+  Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" 
+  negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
 
@@ -170,8 +188,38 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
 
+
+
+const contatore = [];
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const totalM = starWarsCharacters[i].mass;
+
+  if (typeof totalM === 'number'){
+    contatore.push(totalM);
+  }
+}
+console.log(contatore);
+
+const valoreTotale = [] 
+
+
+let valoresNumericos = [277, 75, 32, 136, 49, 120, 75, 32, 84, 77];
+
+let soma = 0;
+
+for (let i = 0; valoresNumericos.length; i++){
+  soma += valoresNumericos[i];
+}
+
+console.log("totale è: ", soma);
+
+
+let crewMass = 0
+
 /* ESERCIZIO 7
-  Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
+  Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica 
+  astronave contenente i personaggi dell'array "starWarsCharacters".
 
   Se la massa è inferiore a 500 stampa in console: "Ship is under loaded"
   Se la massa è superiore a 500 e inferiore a 700 stampa in console: "Ship is half loaded"
