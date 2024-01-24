@@ -116,13 +116,8 @@ const charactersNames = [];
 for (let i = 0; i < starWarsCharacters.length; i++) {
     const name = starWarsCharacters[i].name;
 
-  if (starWarsCharacters[i].name === 'Luke Skywalker') {
-    name.wild = true;
-  } else {
-    name.wild = false;
-  }
 
-  charactersNames.push(name);
+    charactersNames.push(name);
 }
 
 console.log(charactersNames);
