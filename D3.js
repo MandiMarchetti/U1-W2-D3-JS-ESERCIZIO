@@ -148,29 +148,8 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
 
-const eyeColor = [
-   {color:"blue"},
-   {color:"yellow"},
-   {color:"brown"},
-   {color:"red"},
-   {color:"blue-gray"}
-  ]
+const eyeColor = { blue:[],yellow:[],brown:[], red:[], "blue-gray": [],}
 
-
-let arrayVuoto = [];
-
-for (let i = 0; i < eyeColor.length; i++) {
-  const colors = eyeColor[i].color;
-
-if (eyeColor[i].color === "blue") {
-  colors.wild = true;
-} else {
-  colors.wild = false;
-}
-
-arrayVuoto.push(colors);
-}
-console.log(arrayVuoto);
 
 
 /* ESERCIZIO 5
@@ -179,12 +158,26 @@ console.log(arrayVuoto);
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
 
+
+
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
 
+let index = 0;
+let crewMass = 0;
+
+while(index < starWarsCharacters.length){
+  const characters = starWarsCharacters[index];
+  
+  crewMass += characters.mass; 
+  
+  index++;
+}
+console.log(crewMass);
 
 
+/*
 const contatore = [];
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
@@ -208,9 +201,9 @@ for (let i = 0; valoresNumericos.length; i++){
 }
 
 console.log("totale è: ", soma);
+/*
 
 
-let crewMass = 0
 
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica 
@@ -228,6 +221,17 @@ let crewMass = 0
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const starWarsCharactersObj = starWarsCharacters[i];
+  const gender = starWarsCharactersObj.gender;
+
+  if (gender === "n/a") {
+    starWarsCharactersObj.gender = "robot";
+  }
+}
+
+console.log(starWarsCharacters);
 
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
